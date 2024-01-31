@@ -50,9 +50,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Menu />
       <Footer />
     </div>
   );
@@ -65,11 +63,24 @@ function Header() {
   return <h1>Fast React Pizza Co.</h1>;
 }
 
-function Menu() {}
+function Menu() {
+  return (
+    <div>
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+}
 
 function Footer() {
   // this is a sample in making a certain html element to render using only pure js without jsx
-  return React.createElement("footer", null, "We're currently open!");
+  // return React.createElement("footer", null, "We're currently open!");
+
+  return (
+    <footer>{new Date().toLocaleDateString()}. We're currently open!</footer>
+  );
 }
 
 function Pizza() {
