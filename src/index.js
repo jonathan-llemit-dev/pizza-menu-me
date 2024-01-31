@@ -49,12 +49,27 @@ const pizzaData = [
 function App() {
   return (
     <div>
-      <h1>Hello World!</h1>
+      <Header />
       <Pizza />
       <Pizza />
       <Pizza />
+      <Footer />
     </div>
   );
+}
+
+// we use jsx syntax to input some html and css inside js file and inside this js function
+// this jsx will be automatically converted into pure html and css using babel which is default on react
+// jsx simplifies making react components but if we want we can use pure js to generate a component
+function Header() {
+  return <h1>Fast React Pizza Co.</h1>;
+}
+
+function Menu() {}
+
+function Footer() {
+  // this is a sample in making a certain html element to render using only pure js without jsx
+  return React.createElement("footer", null, "We're currently open!");
 }
 
 function Pizza() {
