@@ -78,8 +78,19 @@ function Footer() {
   // this is a sample in making a certain html element to render using only pure js without jsx
   // return React.createElement("footer", null, "We're currently open!");
 
+  const currentHour = new Date().getHours();
+  const openingHour = 8;
+  const closingHour = 17;
+  let status = "";
+
+  currentHour >= openingHour && currentHour < closingHour
+    ? (status = "open")
+    : (status = "close");
+
   return (
-    <footer>{new Date().toLocaleDateString()}. We're currently open!</footer>
+    <footer>
+      {new Date().toLocaleDateString()}. We're currently {status}!
+    </footer>
   );
 }
 
