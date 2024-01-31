@@ -83,6 +83,7 @@ function Footer() {
   const closingHour = 17;
   let status = "";
 
+  // you can add/make/call any logical operations inside components because its just like a normal js function
   currentHour >= openingHour && currentHour < closingHour
     ? (status = "open")
     : (status = "close");
