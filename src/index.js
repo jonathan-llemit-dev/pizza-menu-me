@@ -60,7 +60,11 @@ function App() {
 // this jsx will be automatically converted into pure html and css using babel which is default on react
 // jsx simplifies making react components but if we want we can use pure js to generate a component
 function Header() {
-  return <h1>Fast React Pizza Co.</h1>;
+  return (
+    <h1 style={{ color: "red", fontSize: "48px", textTransform: "uppercase" }}>
+      Fast React Pizza Co.
+    </h1>
+  );
 }
 
 function Menu() {
