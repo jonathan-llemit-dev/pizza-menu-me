@@ -49,7 +49,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -62,9 +62,14 @@ function App() {
 // jsx simplifies making react components but if we want we can use pure js to generate a component
 function Header() {
   return (
-    <h1 style={{ color: "red", fontSize: "48px", textTransform: "uppercase" }}>
-      Fast React Pizza Co.
-    </h1>
+    // sample inline css
+    // <h1 style={{ color: "red", fontSize: "48px", textTransform: "uppercase" }}>
+    //   Fast React Pizza Co.
+    // </h1>
+
+    <header className="header">
+      <h1 style={{}}>Fast React Pizza Co.</h1>
+    </header>
   );
 }
 
