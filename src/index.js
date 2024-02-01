@@ -75,12 +75,17 @@ function Header() {
 
 function Menu() {
   return (
-    <div>
+    <menu className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-    </div>
+      <div className="pizzas">
+        <Pizza />
+        <Pizza />
+        <Pizza />
+        <Pizza />
+        <Pizza />
+        <Pizza />
+      </div>
+    </menu>
   );
 }
 
@@ -99,7 +104,7 @@ function Footer() {
     : (status = "close");
 
   return (
-    <footer>
+    <footer className="footer">
       {new Date().toLocaleDateString()}. We're currently {status}!
     </footer>
   );
@@ -107,9 +112,9 @@ function Footer() {
 
 function Pizza() {
   return (
-    <div>
+    <div className="pizza">
       <img src="pizzas/spinaci.jpg" alt="Pizza spinaci" />
-      <h2>Pizza Spinaci</h2>
+      <h3>Pizza Spinaci</h3>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
   );
