@@ -82,7 +82,15 @@ function Menu() {
           name="Pizza Spinaci"
           ingredients="Tomato, mozarella, spinach, and ricotta cheese"
           photoName="pizzas/spinaci.jpg"
-          price="10"
+          // when passing a numeric value or any other non-string value you can use js
+          price={10}
+        />
+
+        <Pizza
+          photoName="pizzas/funghi.jpg"
+          name="Pizza Funghi"
+          ingredients="Tomato, mozarella, mushrooms, and onion"
+          price={12}
         />
       </div>
     </main>
@@ -93,8 +101,11 @@ function Pizza(props) {
   return (
     <div className="pizza">
       <img src={props.photoName} alt={props.name} />
-      <h3>{props.name}</h3>
-      <p>{props.ingredients}</p>
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>{props.price}</span>
+      </div>
     </div>
   );
 }
