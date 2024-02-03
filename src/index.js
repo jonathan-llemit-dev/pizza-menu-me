@@ -84,7 +84,6 @@ function Menu() {
           photoName="pizzas/spinaci.jpg"
           // when passing a numeric value or any other non-string value you can use js
           price={10}
-          emoji=""
         />
 
         <Pizza

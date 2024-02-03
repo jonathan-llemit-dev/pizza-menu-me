@@ -35,8 +35,8 @@ function Footer() {
   return (
     <footer className="footer">
       {new Date().toLocaleDateString()}. We're currently {status}!
-      <a href="about.js">
-        <span>About Us</span>
+      <a href="index.html">
+        <span>Menu</span>
       </a>
     </footer>
   );
