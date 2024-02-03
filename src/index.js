@@ -84,6 +84,7 @@ function Menu() {
           photoName="pizzas/spinaci.jpg"
           // when passing a numeric value or any other non-string value you can use js
           price={10}
+          emoji=""
         />
 
         <Pizza
@@ -127,6 +128,7 @@ function Footer() {
   return (
     <footer className="footer">
       {new Date().toLocaleDateString()}. We're currently {status}!
+      <span>About Us</span>
     </footer>
   );
 }
