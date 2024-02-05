@@ -103,15 +103,18 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
+// by destructuring props you can easily determine all the data that has been passed on component
+// in destructuring props the name of data that is being passed on component and the name of parameter here on component must be same
+// the name of data on destructured props must be inside {}
+function Pizza({ pizzaObj }) {
   return (
     <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price}</span>
-        <span>{props.pizzaObj.soldOut ? "Sold Out" : "Available"}</span>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.price}</span>
+        <span>{pizzaObj.soldOut ? "Sold Out" : "Available"}</span>
       </div>
     </li>
   );
