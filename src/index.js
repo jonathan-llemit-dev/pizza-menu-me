@@ -77,15 +77,10 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <div className="pizzas">
+      <ul className="pizzas">
         {/* here we iterate each data on an object and used the data as props to render components for each data */}
         {pizzaData.map((pizza) => (
-          <Pizza
-            name={pizza.name}
-            ingredients={pizza.ingredients}
-            price={pizza.price}
-            photoName={pizza.photoName}
-          />
+          <Pizza pizzaObj={pizza} key={pizza.name} />
         ))}
 
         {/* simple way of using components and passing props manually */}
@@ -103,21 +98,22 @@ function Menu() {
           ingredients="Tomato, mozarella, mushrooms, and onion"
           price={12}
         /> */}
-      </div>
+      </ul>
     </main>
   );
 }
 
 function Pizza(props) {
   return (
-    <div className="pizza">
-      <img src={props.photoName} alt={props.name} />
+    <li className="pizza">
+      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
       <div>
-        <h3>{props.name}</h3>
-        <p>{props.ingredients}</p>
-        <span>{props.price}</span>
+        <h3>{props.pizzaObj.name}</h3>
+        <p>{props.pizzaObj.ingredients}</p>
+        <span>{props.pizzaObj.price}</span>
+        <span>{props.pizzaObj.soldOut ? "Sold Out" : "Available"}</span>
       </div>
-    </div>
+    </li>
   );
 }
 
