@@ -74,31 +74,47 @@ function Header() {
 }
 
 function Menu() {
+  const pizzas = pizzaData;
+  // const pizzas = [];
+  const numPizzas = pizzas.length;
+
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <ul className="pizzas">
-        {/* here we iterate each data on an object and used the data as props to render components for each data */}
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name} />
-        ))}
+      {numPizzas > 0 ? (
+        // here we use react fragment. this serves as main element on jsx so that we can render multiple element
+        // the fragment will not actually render on html it only handles the group of elements but does not affect the entire design
+        <>
+          <p>
+            Authentic Italian cuisine. 6 creative dishes to choose from. All
+            from our stone oven, all organic, all delicious.
+          </p>
+          <ul className="pizzas">
+            {/* here we iterate each data on an object and used the data as props to render components for each data */}
+            {pizzaData.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
 
-        {/* simple way of using components and passing props manually */}
-        {/* <Pizza
-          name="Pizza Spinaci"
-          ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-          photoName="pizzas/spinaci.jpg"
-          // when passing a numeric value or any other non-string value you can use js
-          price={10}
-        />
+            {/* simple way of using components and passing props manually */}
+            {/* <Pizza
+              name="Pizza Spinaci"
+              ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+              photoName="pizzas/spinaci.jpg"
+              // when passing a numeric value or any other non-string value you can use js
+              price={10}
+            />
 
-        <Pizza
-          photoName="pizzas/funghi.jpg"
-          name="Pizza Funghi"
-          ingredients="Tomato, mozarella, mushrooms, and onion"
-          price={12}
-        /> */}
-      </ul>
+            <Pizza
+              photoName="pizzas/funghi.jpg"
+              name="Pizza Funghi"
+              ingredients="Tomato, mozarella, mushrooms, and onion"
+              price={12}
+            /> */}
+          </ul>
+        </>
+      ) : (
+        <p>We're still working on our menu. Please come back later</p>
+      )}
     </main>
   );
 }
