@@ -133,10 +133,15 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {new Date().toLocaleDateString()}. We're currently {status}!
-      <a href="about.html">
-        <span>About Us</span>
-      </a>
+      <div className="order">
+        <p>
+          {new Date().toLocaleDateString()}. We're currently {status}!
+        </p>
+        <button className="btn">Order</button>
+        {/* <a href="about.html">
+          <span>About Us</span>
+        </a> */}
+      </div>
     </footer>
   );
 }
