@@ -78,7 +78,18 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
       <div className="pizzas">
-        <Pizza
+        {/* here we iterate each data on an object and used the data as props to render components for each data */}
+        {pizzaData.map((pizza) => (
+          <Pizza
+            name={pizza.name}
+            ingredients={pizza.ingredients}
+            price={pizza.price}
+            photoName={pizza.photoName}
+          />
+        ))}
+
+        {/* simple way of using components and passing props manually */}
+        {/* <Pizza
           name="Pizza Spinaci"
           ingredients="Tomato, mozarella, spinach, and ricotta cheese"
           photoName="pizzas/spinaci.jpg"
@@ -91,7 +102,7 @@ function Menu() {
           name="Pizza Funghi"
           ingredients="Tomato, mozarella, mushrooms, and onion"
           price={12}
-        />
+        /> */}
       </div>
     </main>
   );
