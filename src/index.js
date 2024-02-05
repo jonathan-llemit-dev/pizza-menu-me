@@ -124,13 +124,13 @@ function Menu() {
 // the name of data on destructured props must be inside {}
 function Pizza({ pizzaObj }) {
   return (
-    <li className="pizza">
+    // setting classes conditionally using ternary operation and template literals
+    <li className={`pizza ${pizzaObj.soldOut && "sold-out"}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.price}</span>
-        <span>{pizzaObj.soldOut ? "Sold Out" : "Available"}</span>
+        <span>{pizzaObj.soldOut ? "Sold Out" : pizzaObj.price}</span>
       </div>
     </li>
   );
